@@ -1,0 +1,23 @@
+{% if pagination.total_pages > 1 %}
+<nav class="woocommerce-pagination">
+  <ul class='page-numbers'>
+    {% if pagination.prev_page %}
+    	<li><a class="prev page-numbers" href="{{ pagination.prev_url }}">←</a></li>
+		{% endif %}
+		{% for page in pagination.pages %}
+      {% if current_url == page.url %}
+        <li>
+          <span class='page-numbers current'>{{ page.number }}</span>
+        </li>
+      {% else %}
+        <li>
+          <a class='page-numbers' href='{{ page.url}} '>{{ page.number }}</a>
+        </li>
+      {% endif%}
+    {% endfor %}
+		{% if pagination.next_page %}
+			<li><a class="next page-numbers" href="{{ pagination.next_url }}">&rarr;</a></li>
+    {% endif %}
+  </ul>
+</nav>
+{% endif %}
