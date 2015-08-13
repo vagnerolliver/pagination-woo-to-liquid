@@ -1,1 +1,0 @@
-# pagination-woocoomerce-to-liquids
